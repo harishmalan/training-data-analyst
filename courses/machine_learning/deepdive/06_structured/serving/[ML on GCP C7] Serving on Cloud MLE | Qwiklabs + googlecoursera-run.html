@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html class="mdl-js" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+<script type="text/javascript" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/caff0d62ed"></script><script src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/nr-1118.js"></script><script type="text/javascript" async="" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/js.js"></script><script type="text/javascript" async="" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/analytics.js"></script><script type="text/javascript" async="" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/d58fn3dh7i2n.js"></script><script type="text/javascript" async="" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/analytics_002.js"></script><script type="text/javascript" id="www-widgetapi-script" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/www-widgetapi.js" async=""></script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"caff0d62ed","applicationID":"29451451","transactionName":"IQ1XRUEOVV1dFxlRXAEXSlRATkpZVxI=","queueTime":0,"applicationTime":171,"agent":""}</script>
+<script>window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta content="[{&quot;id&quot;:&quot;no_lab_intro_video_experiment&quot;,&quot;optimize_id&quot;:&quot;b69kiWrZTEWYEa1Akz5dTQ&quot;,&quot;title&quot;:&quot;No Intro Video&quot;,&quot;variant_index&quot;:0,&quot;variant&quot;:&quot;original&quot;}]" name="active-experiments">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Co5c5j4dOdtr9TKai6ScB8eoyozPmwOZ1pDLviUEDTCRdfkkVOZVGEkivdruHEAEVNRnkU938BI2T+eWu20bvQ==">
+<title>[ML on GCP C7] Serving on Cloud MLE | Qwiklabs + googlecoursera-run</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" name="viewport">
+<meta content="In this lab, you build an AppEngine app to serve your ML predictions.  You get to modify the user-facing form and the python script and deploy them as an AppEngine app that makes requests to your deployed ML model." name="description">
+<meta content="hands-on labs, Google Cloud Training, Google Cloud Certification Prep, Google Cloud Labs" name="keywords">
+<meta content="Qwiklabs" name="author">
+<meta property="og:url" content="https://www.qwiklabs.com/focuses/25439?locale=en"><link href="https://www.qwiklabs.com/focuses/25439?locale=en" rel="canonical">
+<meta content="1rRsY0INj8RvwB5EF5pwdxt2A2P9aDgAlsICaJ0d5w0" name="google-site-verification">
+<meta content="noindex" name="robots">
+<meta content="[ML on GCP C7] Serving on Cloud MLE | Qwiklabs + googlecoursera-run" property="og:title">
+<meta content="website" property="og:type">
+<meta content="/favicon-144.png" property="og:image">
+<meta content="Qwiklabs" property="og:site_name">
+<meta content="In this lab, you build an AppEngine app to serve your ML predictions.  You get to modify the user-facing form and the python script and deploy them as an AppEngine app that makes requests to your deployed ML model." property="og:description">
+<meta content="/qwiklabs_logo_900x887.png" property="og:logo" size="900x887">
+<meta content="/qwiklabs_logo_994x187.png" property="og:logo" size="994x187">
+<meta content="#3681E4" property="msapplication-TileColor">
+<meta content="/favicon-144.png" property="msapplication-TileImage">
+<link href="https://googlecoursera.qwiklabs.com/favicon-32.png" rel="shortcut icon">
+<link color="#3681E4" href="https://googlecoursera.qwiklabs.com/favicon-svg.svg" rel="mask-icon">
+<link href="https://googlecoursera.qwiklabs.com/favicon-180.png" rel="apple-touch-icon-precomposed">
+<link rel="stylesheet" media="screen" href="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/css.css">
+
+
+<!--[if lt IE 9]>
+<script src='http://html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+<![endif]-->
+<!--[endif]>  <![endif]-->
+<script>
+//<![CDATA[
+window.gon={};gon.current_user={"firstname":"Sekaran","lastname":"Harish Malan","fullname":"Sekaran Harish Malan","company":"Coursera","email":"harishmalan@gmail.com","origin":"googlecoursera-run, lti-coursera","subscriptions":0,"id":"7e92905b8868fcbc1be4bae192d1a631","qlCreatedAt":"2018-09-12 07:29:46 UTC","optIn":null};gon.segment="j4Im8pqIko0Lxq4wVVZWMPMM0EroHUvb";gon.deployment="googlecoursera-run";
+//]]>
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.qwiklabs.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.qwiklabs.com/catalog?keywords={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" media="all" href="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/application-0647fe30512926aa8bef07b0a8840acbc58fe04ef932f4c4.css">
+<script src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/webcomponents-loader.js"></script><script src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/webcomponents-hi.js"></script>
+<script>
+  EVENT_SOURCE_BASE_URL = "https://googlecoursera-run.qwiklabs.com/nchan-sub?id=";
+</script>
+<script src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/hallofmirrors-868d3b93f9cc89c655ffc376c9655589e34d916a4a3634e.js"></script><script async="" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/lazy.js"></script>
+<script src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/iframe_api.js"></script>
+<script src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/vendor-45d462772c30000424907184f70c7157e95fb6227698d1671c5051.js"></script>
+<script src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/application-c22b140676e417fbc135cb1d7bd0378421bda56a851e27b8d.js"></script>
+</head>
+<body class="focuses focuses-show lab-show" style="">
+<div class="header-container">
+<div class="header">
+<a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect header__button header__button--nav header__side-menu-button js-side-menu-button" data-upgraded=",MaterialButton,MaterialRipple">
+<i class="material-icons">menu</i>
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<div class="header__title">
+<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect header__button header__button--nav" href="https://www.coursera.org/learn/gcp-production-ml-systems/gradedLti/67m8P/qwiklabs-serving-on-cloud-mle" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">arrow_back</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+
+<h1 class="headline-5">
+[ML on GCP C7] Serving on Cloud MLE
+</h1>
+</div>
+<div class="header__actions">
+<ql-help context="lab" productdata="{&quot;userId&quot;:1090150}"></ql-help>
+
+</div>
+</div>
+</div>
+<div class="header__search-bar js-header-search-bar">
+<form id="catalog-search-mobile" onsubmit="ql.catalogSearchFilter(); return false;" action="/searches/elasticsearch" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Co5c5j4dOdtr9TKai6ScB8eoyozPmwOZ1pDLviUEDTCRdfkkVOZVGEkivdruHEAEVNRnkU938BI2T+eWu20bvQ==">
+<input type="text" name="keywords" id="keywords" placeholder="Search">
+</form>
+
+<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect header__button" data-upgraded=",MaterialButton,MaterialRipple">
+<i class="material-icons">close</i>
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+</div>
+
+<nav class="is-open js-side-menu side-menu">
+<div class="side-menu__inner" style="min-height: 346px;">
+<nav class="side-menu__nav">
+<a title="Home" class="side-menu__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/home"><div class="side-menu__item__icon">
+<ql-icon>home</ql-icon>
+</div>
+<div class="side-menu__item__label">
+Home
+</div>
+</a>
+<a title="Catalog" class="side-menu__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/catalog"><div class="side-menu__item__icon">
+<ql-icon>school</ql-icon>
+</div>
+<div class="side-menu__item__label">
+Catalog
+</div>
+</a>
+<a title="My Learning" class="side-menu__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/my_learning"><div class="side-menu__item__icon">
+<ql-icon>event_note</ql-icon>
+</div>
+<div class="side-menu__item__label">
+My Learning
+</div>
+</a>
+<a title="Help Center" target="_blank" class="side-menu__item js-navigation-button" href="https://support.google.com/qwiklabs"><div class="side-menu__item__icon">
+<ql-icon>help_outline</ql-icon>
+</div>
+<div class="side-menu__item__label">
+Help Center
+</div>
+</a>
+</nav>
+<div class="side-menu__small-links js-small-links">
+<a href="https://googlecoursera.qwiklabs.com/privacy_policy">Privacy</a>
+<a href="https://googlecoursera.qwiklabs.com/terms_of_service">Terms of Service</a>
+</div>
+</div>
+</nav>
+
+<div class="mdl-layout__container"><div class="mdl-layout mdl-js-layout is-upgraded" data-upgraded=",MaterialLayout">
+<main>
+<div class="is-open js-main l-main-wrapper">
+<span class="hidden" id="flash-sibling-before"></span>
+
+
+
+
+
+
+
+<div class="js-lab-state" data-analytics-payload="{&quot;label&quot;:&quot;[ML on GCP C7] Serving on Cloud MLE&quot;,&quot;lab_name&quot;:&quot;[ML on GCP C7] Serving on Cloud MLE&quot;,&quot;classroom_name&quot;:null,&quot;deployment&quot;:&quot;googlecoursera-run&quot;}" data-focus-id="25439" data-parent="classroom"></div>
+<div class="l-lab-sidebar js-lab-sidebar-container">
+<div class="lab-sidebar js-lab-sidebar elevation-1">
+<div class="lab-sidebar__group">
+<div class="form-row js-form-row">
+<a class="button button--full-width button--secondary js-connection-dns-link js-external-window" target="_blank" href="https://googlecoursera.qwiklabs.com/lab_instances/run/5932790">
+Open Google Console
+</a>
+</div>
+
+<p class="caption text--gray l-mtm l-mbm">
+<strong>Caution:</strong> When you are in the console, do not deviate from the lab instructions. Doing so may cause your account to be blocked.
+</p>
+<div class="form-row js-form-row">
+<div class="control-group">
+<label class="label--console">
+Username 
+</label>
+<input class="input input--console js-connection-username-0" readonly="readonly" value="google2702156_student@qwiklabs.net">
+<button class="button button--copy button--copy-input js-copy-input-button" data-clipboard-target=".js-connection-username-0" title="" data-original-title="Copied">
+<i class="fa fas fa-clipboard"></i>
+</button>
+</div>
+</div>
+
+<div class="form-row js-form-row">
+<div class="control-group">
+<label class="label--console">
+Password
+</label>
+<input class="input input--console js-connection-password" readonly="readonly" value="H8FTPk3Cb9">
+<button class="button button--copy button--copy-input js-copy-input-button" data-clipboard-target=".js-connection-password" title="" data-original-title="Copied">
+<i class="fa fas fa-clipboard"></i>
+</button>
+</div>
+</div>
+
+<div class="form-row js-form-row">
+<div class="control-group">
+<label class="label--console">
+GCP Project ID 
+</label>
+<input class="input input--console js-connection-project-0" readonly="readonly" value="qwiklabs-gcp-e79137aac1e0ad20">
+<button class="button button--copy button--copy-input js-copy-input-button" data-clipboard-target=".js-connection-project-0" title="" data-original-title="Copied">
+<i class="fa fas fa-clipboard"></i>
+</button>
+</div>
+</div>
+
+
+<div class="lab-sidebar__resource lab-sidebar__resource--additional-details l-mtl is-hidden js-cf-connection-output"></div>
+<div class="lab-sidebar__resource lab-sidebar__resource--additional-details l-mtl is-hidden js-additional-connection-info"></div>
+<div class="lab-sidebar__intro-link">
+<a class="js-lab-introduction-link">New to labs? View our introductory video!</a>
+</div>
+</div>
+</div>
+</div>
+<div class="l-lab-main-header">
+<header class="lab-header js-lab-header elevation-1">
+<div class="lab-header__section lab-header__section--flex">
+<div class="lab-header__progress js-progress is-hidden">
+<div class="lab-header__progress__bar js-progress-bar" style="width: 100%;"></div>
+</div>
+</div>
+<div class="lab-header__section lab-header__section--no-border lab-header-section-progress">
+<span class="lab-header__progress-message js-progress-message">
+<div class="lab-header__progress-message__indicator js-progress-message-indicator is-complete"></div>
+<span class="js-progress-message-incomplete is-hidden">
+Lab Setting Up
+</span>
+<span class="js-progress-message-complete">
+Lab Running
+</span>
+</span>
+</div>
+<div class="lab-header__section">
+<a class="button button--start button--lab js-start-lab-button is-hidden">
+Start Lab
+</a>
+<a class="button button--wait button--lab js-waiting-lab-button is-hidden">
+<i class="fa fa-spinner fa-pulse"></i>
+</a>
+<a class="button button--end button--lab js-end-lab-button">
+End Lab
+</a>
+</div>
+<div class="lab-header__section">
+<ql-lab-timer duration="7200" elapsed="0"></ql-lab-timer>
+</div>
+</header>
+</div>
+<div class="l-lab-main-body">
+<div class="js-lab-content lab-content">
+<div class="alert alert--fake js-alert">
+<p class="alert__message js-alert-message"></p>
+<a class="alert__close js-alert-close">
+<i class="fa fa-times"></i>
+</a>
+<iframe class="l-ie-iframe-fix"></iframe>
+</div>
+<div class="lab-content__markdown-wrapper">
+<div class="lab-preamble">
+<h1 class="lab-preamble__title">
+[ML on GCP C7] Serving on Cloud MLE
+</h1>
+<div class="lab-preamble__details subtitle-headline-1">
+<span>2 hours </span>
+<span>Free</span>
+<div class="lab__rating">
+<a href="https://googlecoursera.qwiklabs.com/focuses/25439/reviews?parent=catalog"><div class="rateit" data-rateit-readonly="true" data-rateit-value="4.3061"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 68.8976px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+
+</a><a data-target="#lab-review-modal" data-toggle="modal">
+Rate Lab
+</a>
+</div>
+</div>
+</div>
+
+<div class="lab-content__inner-wrapper">
+<div class="js-markdown-instructions lab-content__markdown markdown-lab-instructions" id="markdown-lab-instructions">
+
+
+
+<h2 id="step1">Overview</h2>
+<p><em>Duration is 1 min</em></p>
+<p>In this lab, you build an AppEngine app to serve your ML predictions.
+  You get to modify the user-facing form and the python script and 
+deploy them as an AppEngine app that makes requests to your deployed ML 
+model.</p>
+<h3><strong>What you learn</strong></h3>
+<p>In this lab, you:</p>
+<ul>
+<li>
+<p>modify a simple UI form to get user input when making calls to your model</p>
+</li>
+<li>
+<p>build the http request to be made to your deployed ML model on Cloud MLE</p>
+</li>
+</ul>
+<h2 id="step2">Setup</h2>
+<p>For each lab, you get a new GCP project and set of resources for a fixed time at no cost.</p>
+<ol>
+<li>
+<p>Make sure you signed into Qwiklabs using an <strong>incognito window</strong>.</p>
+</li>
+<li>
+<p>Note the lab's access time (for example, <img alt="img/time.png" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/699409e014fbb8298cf5747a0535e04d13f51dfbb54fbaba57e7276dd12c.png"> and make sure you can finish in that time block.</p>
+</li>
+</ol>
+<aside> <p>
+  There is no pause feature. You can restart if needed, but you have to start at the beginning.
+  </p>
+
+</aside>
+<ol start="3">
+<li>
+<p>When ready, click <img alt="img/start_lab.png" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/5c4f31eeebd0a24cae6cdc2760a29cfaf04136b325a3988d6620c3cd0437.png">.</p>
+</li>
+<li>
+<p>Note your lab credentials. You will use them to sign in to Cloud Platform Console.
+<img alt="img/open_console.png" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/5eaee037e6cedbf49f6a702ab8a9ef820bb8e717332946ff76a0831a6396.png"></p>
+</li>
+<li>
+<p>Click <strong>Open Google Console</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Use another account</strong> and copy/paste credentials for <strong>this</strong> lab into the prompts.</p>
+</li>
+</ol>
+<aside class="warning"><p>
+  If you use other credentials, you'll get errors or <strong>incur charges</strong>.
+  </p>
+</aside>
+<ol start="7">
+<li>Accept the terms and skip the recovery resource page.</li>
+</ol>
+<aside class="warning"><p>
+  Do not click <strong>End</strong> unless you are finished with the lab or want to restart it. This clears your work and removes the project.
+  </p>
+</aside>
+
+<h2 id="step3">Start Cloud Shell</h2>
+<h3>Activate Google Cloud Shell</h3>
+<p>Google Cloud Shell provides command-line access to your GCP resources.</p>
+<p>From the GCP Console click the <strong>Cloud Shell</strong> icon on the top right toolbar:</p>
+<p><img alt="Cloud Shell Icon" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/718029dee0e562c61c14536c5a636a5bae0ef5136e9863b98160d1e06123.png"></p>
+<p>Then click <strong>START CLOUD SHELL</strong>:</p>
+<p><img alt="Start Cloud Shell" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/feb5ea74b4a4f6dfac7800f39c3550364ed7a33a7ab17b6eb47cab3e65c3.png"></p>
+<aside>
+You can click <strong>START CLOUD SHELL</strong> immediately when the dialog comes up instead of waiting in the dialog until the Cloud Shell provisions.
+
+</aside>
+<p>It  takes a few moments to provision and connects to the environment:</p>
+<p><img alt="Cloud Shell Terminal" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/11def2e8f4cfd6f1590f3fd825d4566658501ca87e1d5d1552aa17339050.png"></p>
+<p>The Cloud Shell is a virtual machine loaded with all the development 
+tools you’ll need. It offers a persistent 5GB home directory, and runs 
+on the Google Cloud, greatly enhancing network performance and 
+authentication.</p>
+<p>Once connected to the cloud shell, you'll see that you are already authenticated and  the project is set to your <em>PROJECT_ID</em>:</p>
+<pre><code>gcloud auth list
+</code><button class="button button--copy js-copy-button-0"><i class="fa fa-clipboard"></i></button></pre>
+<p>Output:</p>
+<pre><code class="language-output prettyprint prettyprinted" style=""><span class="typ">Credentialed</span><span class="pln"> accounts</span><span class="pun">:</span><span class="pln">
+ </span><span class="pun">-</span><span class="pln"> </span><span class="str">&lt;myaccount&gt;</span><span class="pun">@&lt;</span><span class="pln">mydomain</span><span class="pun">&gt;.</span><span class="pln">com </span><span class="pun">(</span><span class="pln">active</span><span class="pun">)</span></code><button class="button button--copy js-copy-button-1"><i class="fa fa-clipboard"></i></button></pre>
+<aside>
+<strong>Note:</strong> <code>gcloud</code> is the powerful and unified command-line tool for Google Cloud Platform. Full documentation is available on <a href="https://cloud.google.com/sdk/gcloud">Google Cloud gcloud Overview</a>. It comes pre-installed on Cloud Shell and supports tab-completion.
+
+</aside>
+<pre><code>gcloud config list project
+</code><button class="button button--copy js-copy-button-2"><i class="fa fa-clipboard"></i></button></pre>
+<p>Output:</p>
+<pre><code class="language-output prettyprint prettyprinted" style=""><span class="pun">[</span><span class="pln">core</span><span class="pun">]</span><span class="pln">
+project </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">PROJECT_ID</span><span class="pun">&gt;</span></code><button class="button button--copy js-copy-button-3"><i class="fa fa-clipboard"></i></button></pre>
+
+<h2 id="step4">Copy trained model</h2>
+<h3><strong>Step 1</strong></h3>
+<p>Set necessary variables and create a bucket:</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">REGION</span><span class="pun">=</span><span class="pln">us</span><span class="pun">-</span><span class="pln">central1
+BUCKET</span><span class="pun">=</span><span class="pln">$</span><span class="pun">(</span><span class="pln">gcloud config get</span><span class="pun">-</span><span class="pln">value project</span><span class="pun">)</span><span class="pln">
+TFVERSION</span><span class="pun">=</span><span class="lit">1.7</span><span class="pln">
+gsutil mb </span><span class="pun">-</span><span class="pln">l $</span><span class="pun">{</span><span class="pln">REGION</span><span class="pun">}</span><span class="pln"> gs</span><span class="pun">://</span><span class="pln">$</span><span class="pun">{</span><span class="pln">BUCKET</span><span class="pun">}</span></code><button class="button button--copy js-copy-button-4"><i class="fa fa-clipboard"></i></button></pre>
+<h3><strong>Step 2</strong></h3>
+<p>Copy trained model into your bucket:</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">gsutil </span><span class="pun">-</span><span class="pln">m cp </span><span class="pun">-</span><span class="pln">R gs</span><span class="pun">://</span><span class="pln">cloud</span><span class="pun">-</span><span class="pln">training</span><span class="pun">-</span><span class="pln">demos</span><span class="pun">/</span><span class="pln">babyweight</span><span class="pun">/</span><span class="pln">trained_model gs</span><span class="pun">://</span><span class="pln">$</span><span class="pun">{</span><span class="pln">BUCKET</span><span class="pun">}/</span><span class="pln">babyweight</span></code><button class="button button--copy js-copy-button-5" title="" data-original-title="Copied"><i class="fa fa-clipboard"></i></button></pre>
+<h2 id="step5">Deploy trained model</h2>
+<h3><strong>Step 1</strong></h3>
+<p>Set necessary variables:</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">MODEL_NAME</span><span class="pun">=</span><span class="pln">babyweight
+MODEL_VERSION</span><span class="pun">=</span><span class="pln">ml_on_gcp
+MODEL_LOCATION</span><span class="pun">=</span><span class="pln">$</span><span class="pun">(</span><span class="pln">gsutil ls gs</span><span class="pun">://</span><span class="pln">$</span><span class="pun">{</span><span class="pln">BUCKET</span><span class="pun">}/</span><span class="pln">babyweight</span><span class="pun">/</span><span class="pln">export</span><span class="pun">/</span><span class="pln">exporter</span><span class="pun">/</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> tail </span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span></code><button class="button button--copy js-copy-button-6"><i class="fa fa-clipboard"></i></button></pre>
+<h3><strong>Step 2</strong></h3>
+<p>Deploy trained model:</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">gcloud ml</span><span class="pun">-</span><span class="pln">engine models create $</span><span class="pun">{</span><span class="pln">MODEL_NAME</span><span class="pun">}</span><span class="pln"> </span><span class="pun">--</span><span class="pln">regions $REGION
+gcloud ml</span><span class="pun">-</span><span class="pln">engine versions create $</span><span class="pun">{</span><span class="pln">MODEL_VERSION</span><span class="pun">}</span><span class="pln"> </span><span class="pun">--</span><span class="pln">model $</span><span class="pun">{</span><span class="pln">MODEL_NAME</span><span class="pun">}</span><span class="pln"> </span><span class="pun">--</span><span class="pln">origin $</span><span class="pun">{</span><span class="pln">MODEL_LOCATION</span><span class="pun">}</span><span class="pln"> </span><span class="pun">--</span><span class="pln">runtime</span><span class="pun">-</span><span class="pln">version $TFVERSION</span></code><button class="button button--copy js-copy-button-7" title="" data-original-title="Copied"><i class="fa fa-clipboard"></i></button></pre>
+<h2 id="step6">Code for your frontend</h2>
+<h3><strong>Step 1</strong></h3>
+<p>Clone the course repository:</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">cd </span><span class="pun">~</span><span class="pln">
+git clone https</span><span class="pun">://</span><span class="pln">github</span><span class="pun">.</span><span class="pln">com</span><span class="pun">/</span><span class="typ">GoogleCloudPlatform</span><span class="pun">/</span><span class="pln">training</span><span class="pun">-</span><span class="pln">data</span><span class="pun">-</span><span class="pln">analyst</span></code><button class="button button--copy js-copy-button-8"><i class="fa fa-clipboard"></i></button></pre>
+<h3><strong>Step 2</strong></h3>
+<p>You can use the Cloud Shell code editor to view and edit the contents of these files.</p>
+<p>Click on the (<img alt="b8ebde10ba2a31c8.png" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/5cd735e9c729fee5765a0d6cf933bcd0357f5ebc6faa899bb26b8f3d740b.png">) icon on the top right of your Cloud Shell window to launch Code Editor.</p>
+<p>Once launched, navigate to the <code>~/training-data-analyst/courses/machine_learning/deepdive/06_structured/labs/serving</code> directory.</p>
+<h3><strong>Step 3</strong></h3>
+<p>Open the <strong><code>application/main.py</code></strong>and <strong><code>application/templates/form.html</code></strong> files and notice the <em>#TODO</em>s within the code. These need to be replaced with code. The next section tells you how.</p>
+<h2 id="step7">Modify main.py</h2>
+<h3><strong>Step 1</strong></h3>
+<p>Open the <code>main.py</code> file by clicking on it. Notice the lines with <em># TODO</em> for setting credentials and the api to use.</p>
+<p>Set the credentials to use Google Application Default Credentials 
+(recommended way to authorize calls to our APIs when building apps 
+deployed on AppEngine):</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">credentials </span><span class="pun">=</span><span class="pln"> </span><span class="typ">GoogleCredentials</span><span class="pun">.</span><span class="pln">get_application_default</span><span class="pun">()</span></code><button class="button button--copy js-copy-button-9"><i class="fa fa-clipboard"></i></button></pre>
+<p>Specify the api name (ML Engine API)  and version to use:</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">api </span><span class="pun">=</span><span class="pln"> discovery</span><span class="pun">.</span><span class="pln">build</span><span class="pun">(</span><span class="str">'ml'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'v1'</span><span class="pun">,</span><span class="pln"> credentials</span><span class="pun">=</span><span class="pln">credentials</span><span class="pun">)</span></code><button class="button button--copy js-copy-button-10"><i class="fa fa-clipboard"></i></button></pre>
+<h3><strong>Step 2</strong></h3>
+<p>Scroll further down in <code>main.py</code> and look for the next <em>#TODO</em> in the method <code>get_prediction()</code>. In there, specify, using the <strong>parent</strong> variable, the name of your trained model deployed on Cloud MLE:</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">parent </span><span class="pun">=</span><span class="pln"> </span><span class="str">'projects/%s/models/%s'</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">project</span><span class="pun">,</span><span class="pln"> model_name</span><span class="pun">)</span></code><button class="button button--copy js-copy-button-11"><i class="fa fa-clipboard"></i></button></pre>
+<h3><strong>Step 3</strong></h3>
+<p>Now that you have all the pieces for making the call to your model, build the call request by specifying it in the <strong>prediction</strong> variable:</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">prediction </span><span class="pun">=</span><span class="pln"> api</span><span class="pun">.</span><span class="pln">projects</span><span class="pun">().</span><span class="pln">predict</span><span class="pun">(</span><span class="pln">body</span><span class="pun">=</span><span class="pln">input_data</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">=</span><span class="pln">parent</span><span class="pun">).</span><span class="pln">execute</span><span class="pun">()</span></code><button class="button button--copy js-copy-button-12"><i class="fa fa-clipboard"></i></button></pre>
+<h3><strong>Step 4</strong></h3>
+<p>The final <em>#TODO</em> (scroll towards bottom) is to get gestation_weeks from the form data and cast into a float within the <strong>features</strong> array:</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">features</span><span class="pun">[</span><span class="str">'gestation_weeks'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> float</span><span class="pun">(</span><span class="pln">data</span><span class="pun">[</span><span class="str">'gestation_weeks'</span><span class="pun">])</span></code><button class="button button--copy js-copy-button-13"><i class="fa fa-clipboard"></i></button></pre>
+<h3><strong>Step 5</strong></h3>
+<p>Save the changes you made using the <strong>File</strong> &gt; <strong>Save</strong> button on the top left of your code editor window.</p>
+<p><img alt="3b0e6c092072fec5.png" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/9cff32861ee2e2dfa534f609fa4acbf7418e3b3b9475dcb188cff5510cfc.png"></p>
+<h2 id="step8">Modify form.html</h2>
+<p><code>form.html</code> is the front-end of your app.  The user fills 
+in data (features) about the mother based on which we will make the 
+predictions using our trained model.</p>
+<h3><strong>Step 1</strong></h3>
+<p>In code editor, navigate to the <code>application/templates</code> directory and click to open the <code>form.html</code> file.</p>
+<h3><strong>Step 2</strong></h3>
+<p>There is one <em>#TODO</em> item here. Look for the div segment for <strong>Plurality</strong> and add options for other plurality values (2, 3, etc).</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pun">&lt;</span><span class="pln">md</span><span class="pun">-</span><span class="pln">option value</span><span class="pun">=</span><span class="str">"2"</span><span class="pun">&gt;</span><span class="typ">Twins</span><span class="pun">&lt;/</span><span class="pln">md</span><span class="pun">-</span><span class="pln">option</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;</span><span class="pln">md</span><span class="pun">-</span><span class="pln">option value</span><span class="pun">=</span><span class="str">"3"</span><span class="pun">&gt;</span><span class="typ">Triplets</span><span class="pun">&lt;/</span><span class="pln">md</span><span class="pun">-</span><span class="pln">option</span><span class="pun">&gt;</span></code><button class="button button--copy js-copy-button-14"><i class="fa fa-clipboard"></i></button></pre>
+<h3><strong>Step 3</strong></h3>
+<p>Save the changes you made using the <strong>File</strong> &gt; <strong>Save</strong> button on the top left of your code editor window.</p>
+<h2 id="step9">Deploy and test your app</h2>
+<h3><strong>Step 1</strong></h3>
+<p>In Cloud Shell, run the <code>deploy.sh</code> script to install required dependencies and deploy your app engine app to the cloud.</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">cd training</span><span class="pun">-</span><span class="pln">data</span><span class="pun">-</span><span class="pln">analyst</span><span class="pun">/</span><span class="pln">courses</span><span class="pun">/</span><span class="pln">machine_learning</span><span class="pun">/</span><span class="pln">deepdive</span><span class="pun">/</span><span class="lit">06</span><span class="pln">_structured</span><span class="pun">/</span><span class="pln">labs</span><span class="pun">/</span><span class="pln">serving
+</span><span class="pun">./</span><span class="pln">deploy</span><span class="pun">.</span><span class="pln">sh</span></code><button class="button button--copy js-copy-button-15"><i class="fa fa-clipboard"></i></button></pre>
+<aside class="warning"><p>Note: Choose a region for App Engine when prompted and follow the prompts during this process</p>
+</aside>
+<h3><strong>Step 2</strong></h3>
+<p>Go to the url <code>https://&lt;PROJECT-ID&gt;.appspot.com</code>  and start making predictions.</p>
+<p><em>Note: Replace &lt;PROJECT-ID&gt; with your Project ID.</em></p>
+<h2 id="step10">End your lab</h2>
+<p>When you have completed your lab, click <strong>End Lab</strong>. Qwiklabs removes the resources you’ve used and cleans the account for you.</p>
+<p>You will be given an opportunity to rate the lab experience. Select 
+the applicable number of stars, type a comment, and then click <strong>Submit</strong>.</p>
+<p>The number of stars indicates the following:</p>
+<ul>
+<li>1 star = Very dissatisfied</li>
+<li>2 stars = Dissatisfied</li>
+<li>3 stars = Neutral</li>
+<li>4 stars = Satisfied</li>
+<li>5 stars = Very satisfied</li>
+</ul>
+<p>You can close the dialog box if you don't want to provide feedback.</p>
+<p>For feedback, suggestions, or corrections, please use the <strong>Support</strong> tab.</p>
+
+<p>Last Tested Date: 12-11-2018</p>
+<p>Last Updated Date: 12-11-2018</p>
+<p>©2018 Google LLC All rights reserved. Google and the Google logo are 
+trademarks of Google LLC. All other company and product names may be 
+trademarks of the respective companies with which they are associated.</p>
+
+
+
+</div>
+<div class="js-lab-content-outline lab-content__outline is-stuck">
+<a href="#step1" class="">Overview</a><a href="#step2" class="">Setup</a><a href="#step3" class="is-active">Start Cloud Shell</a><a href="#step4" class="">Copy trained model</a><a href="#step5" class="">Deploy trained model</a><a href="#step6" class="">Code for your frontend</a><a href="#step7" class="">Modify main.py</a><a href="#step8" class="">Modify form.html</a><a href="#step9" class="">Deploy and test your app</a><a href="#step10" class="">End your lab</a>
+</div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+<div class="lab-introduction js-lab-introduction is-hidden">
+<div class="lab-introduction__inner">
+<h1 class="headline-1">Welcome to Your First Lab!</h1>
+<div class="lab-introduction__video">
+<iframe allow="autoplay; encrypted-media" id="lab-introduction" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/yF7EDXKTmoQ.html" frameborder="0"></iframe>
+</div>
+<a class="button js-skip-button">Skip</a>
+</div>
+</div>
+
+
+</div>
+</main>
+<div class="bottom-menu">
+<a title="Home" class="side-menu__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/home"><div class="side-menu__item__icon">
+<ql-icon>home</ql-icon>
+</div>
+<div class="side-menu__item__label">
+Home
+</div>
+</a>
+<a title="Catalog" class="side-menu__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/catalog"><div class="side-menu__item__icon">
+<ql-icon>school</ql-icon>
+</div>
+<div class="side-menu__item__label">
+Catalog
+</div>
+</a>
+<a title="My Learning" class="side-menu__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/my_learning"><div class="side-menu__item__icon">
+<ql-icon>event_note</ql-icon>
+</div>
+<div class="side-menu__item__label">
+My Learning
+</div>
+</a>
+<a class="side-menu__item js-side-menu-button">
+<div class="side-menu__item__icon">
+<i class="material-icons">menu</i>
+</div>
+<span class="side-menu__item__tooltip">More</span>
+<div class="side-menu__item__label">
+More
+</div>
+</a>
+</div>
+
+<div class="modal fade" id="support-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<h4 class="modal-header">How can we help you?</h4>
+<form action="/contact_support" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Co5c5j4dOdtr9TKai6ScB8eoyozPmwOZ1pDLviUEDTCRdfkkVOZVGEkivdruHEAEVNRnkU938BI2T+eWu20bvQ==">
+<div class="modal-body">
+<p class="l-mbl">We will get back to you within 24 hours.</p>
+<div class="form-row">
+<div class="control-group">
+<label for="Question">Question</label>
+<input type="text" name="question" id="question" placeholder="Briefly describe your question">
+</div>
+</div>
+<div class="form-row">
+<div class="control-group">
+<label for="Details">Details</label>
+<textarea name="description" id="description" rows="5" placeholder="Fill in the details here. Please try to be as specific as possible.
+"></textarea>
+</div>
+</div>
+<div class="form-row">
+<div class="control-group">
+<label for="Your_Name">Your name</label>
+<input type="text" name="name" id="name" value="Sekaran Harish Malan">
+</div>
+<div class="control-group">
+<label for="Your_Email">Your email</label>
+<input type="text" name="email" id="email" value="harishmalan@gmail.com">
+</div>
+</div>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--cancel mdl-js-button mdl-js-ripple-effect l-mll" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Nevermind
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<input type="submit" name="commit" value="Submit" class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-disable-with="Submit" data-upgraded=",MaterialButton,MaterialRipple"><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+</div>
+</form>
+
+
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix"></iframe>
+</div>
+<div class="modal fade" id="lab-help-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<h4 class="modal-header">Get Help</h4>
+<form action="/contact_support" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Co5c5j4dOdtr9TKai6ScB8eoyozPmwOZ1pDLviUEDTCRdfkkVOZVGEkivdruHEAEVNRnkU938BI2T+eWu20bvQ==">
+<div class="modal-body">
+<div class="control-group l-mbl">
+<label for="Question">Question</label>
+<input type="text" name="question" id="question" placeholder="Briefly describe your question">
+</div>
+<div class="control-group l-mbl">
+<label for="Details">Details</label>
+<textarea name="description" id="description" rows="5" placeholder="Fill in the details here. Please try to be as specific as possible.
+"></textarea>
+</div>
+<div class="control-group l-mbl">
+<label for="Your_Name">Your name</label>
+<input type="text" name="name" id="name" value="Sekaran Harish Malan">
+</div>
+<div class="control-group l-mbl">
+<label for="Your_Email">Your email</label>
+<input type="text" name="email" id="email" value="harishmalan@gmail.com">
+</div>
+<div class="control-group l-mbl">
+<label for="Severity">Severity</label>
+<select name="severity" id="severity"><option value="0" selected="selected">-</option>
+<option value="severity_1">Severity 1 (Highest)</option>
+<option value="severity_2">Severity 2</option>
+<option value="severity_3">Severity 3</option>
+<option value="severity_4">Severity 4</option>
+<option value="severity_5">Severity 5 (Lowest)</option></select>
+</div>
+<div class="control-group">
+<div class="control-label"></div>
+We will get back to you within 24 hours.
+</div>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Cancel
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<input type="submit" name="commit" value="Submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" data-disable-with="Submit" data-upgraded=",MaterialButton,MaterialRipple"><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+</div>
+</form>
+
+
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix"></iframe>
+</div>
+<div class="modal fade" id="lab-details-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<div class="modal-body">
+<p class="l-mbm">
+In this lab, you build an AppEngine app to serve your ML predictions.  
+You get to modify the user-facing form and the python script and deploy 
+them as an AppEngine app that makes requests to your deployed ML model.
+</p>
+<p class="small-label l-mbs">
+<strong>
+Duration:
+</strong>
+0m setup
+·
+120m access
+·
+90m completion
+</p>
+<p class="small-label l-mbs">
+<span><strong>Levels: </strong>advanced</span>
+</p>
+<p class="small-label">
+<strong>
+Permalink:
+</strong>
+<a href="https://googlecoursera.qwiklabs.com/catalog_lab/1531">https://googlecoursera.qwiklabs.com/catalog_lab/1531</a>
+</p>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Got It
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+</div>
+
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix"></iframe>
+</div>
+<div class="modal fade" id="lab-review-modal" style="display: none;">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<form class="simple_form js-lab-review-form" id="new_lab_review" action="/lab_reviews" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><div class="modal-body">
+<p class="label">
+How satisfied are you with this lab?
+</p>
+<div class="rateit js-rateit" data-rateit-max="5" data-rateit-min="0" data-rateit-resetable="false" data-rateit-step="1" data-rateit-value="0"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 0px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+<div class="l-mtm">
+
+<div class="control-group hidden lab_review_user_id"><div class="controls"><input class="hidden" type="hidden" value="1090150" name="lab_review[user_id]" id="lab_review_user_id"></div></div>
+<div class="control-group hidden lab_review_classroom_id"><div class="controls"><input class="hidden" type="hidden" value="2204" name="lab_review[classroom_id]" id="lab_review_classroom_id"></div></div>
+<div class="control-group hidden lab_review_lab_id"><div class="controls"><input class="hidden" type="hidden" value="1531" name="lab_review[lab_id]" id="lab_review_lab_id"></div></div>
+<div class="control-group hidden lab_review_focus_id"><div class="controls"><input class="hidden" type="hidden" value="25439" name="lab_review[focus_id]" id="lab_review_focus_id"></div></div>
+<div class="control-group hidden lab_review_rating"><div class="controls"><input class="hidden js-rating-input" type="hidden" name="lab_review[rating]" id="lab_review_rating"></div></div>
+<div class="control-group text optional lab_review_comment"><label class="text optional control-label" for="lab_review_comment">Comment</label><div class="controls"><textarea class="text optional" name="lab_review[comment]" id="lab_review_comment"></textarea></div></div>
+</div>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Cancel
+<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 182.677px; height: 182.677px; transform: translate(-50%, -50%) translate(32px, 21px);"></span></span></a>
+<input type="submit" name="commit" value="Submit" class="btn mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" data-disable-with="Submit" data-upgraded=",MaterialButton,MaterialRipple"><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+</div>
+</form>
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix"></iframe>
+</div>
+
+</div></div>
+<script>
+  $( function() {
+    ql.initMaterialInputs();
+    initChosen();
+    initSearch();
+    initTabs();
+    ql.list.init();
+    ql.favoriting.init();
+    ql.header.myAccount.init();
+    initTooltips();
+    ql.autocomplete.init();
+    ql.toolbar.init();
+    ql.modals.init();
+    initLabContent( );
+  ql.labOutline.links.init("25439");
+  ql.labOutline.layout.init();
+  initLabReviewModal();
+  initLabAssessment();
+  ql.labIntroduction.init( true );
+  ql.labData.init();
+  initLabTranslations( {"are_you_sure":"All done? If you end this lab, you will lose all your work. You may not be able to restart the lab if there is a quota limit. Are you sure you want to end this lab?\n","in_progress":"*In Progress*","ending":"*Ending*","starting":"*Starting, please wait*","end_concurrent_labs":"Sorry, you can only run one lab at a time. To start this lab, please confirm that you want all of your existing labs to end.\n","copied":"Copied","no_resource":"Error retrieving resource.","no_support":"No Support","mac_press":"Press ⌘-C to copy","thanks_review":"Thanks for reviewing this lab.","windows_press":"Press Ctrl-C to copy","days":"days"} );
+  initLabRun();
+  ql.initHeader();
+  ql.sideMenu.init();
+  ql.navigation.init();
+  
+  });
+</script>
+<style>
+  .mdl-layout__container {
+    position: static
+  }
+</style>
+
+
+<div id="drift-widget-container" style="position: absolute; z-index: 2147483647;"><iframe id="drift-widget" src="[ML%20on%20GCP%20C7]%20Serving%20on%20Cloud%20MLE%20|%20Qwiklabs%20+%20googlecoursera-run_files/index.html" style="border: medium none; display: block; height: 0px !important; width: 0px !important; position: fixed; top: auto; left: auto; bottom: 0px; right: 0px; visibility: hidden; z-index: 2147483647; max-height: 100vh; max-width: 100vw; transition: none 0s ease 0s; background: transparent none repeat scroll 0% 0%; opacity: 1;" title="Drift Messenger" role="complementary" class="drift-widget-hidden"></iframe></div></body></html>
